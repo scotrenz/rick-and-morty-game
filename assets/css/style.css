@@ -1,0 +1,14 @@
+body {
+	margin: auto;
+	width: 800px;
+	background-image: url(../images/rick-background.png);
+	background-size: cover;
+}
+#crystal {
+	float: left
+}
+.col-md-4{
+	height: 150px;
+	margin: 0px 10px 20px 10px;
+	width: 390px;
+}
