@@ -12,3 +12,8 @@ body {
 	margin: 0px 10px 20px 10px;
 	width: 390px;
 }
+h1{
+	font-weight: bold;
+	font-size: 60px;
+	font-family: arial;
+}
