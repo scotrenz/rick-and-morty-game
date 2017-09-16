@@ -2,7 +2,7 @@
 $(document).ready(function() {
     var randomNumber
     var userTotal = 0
-    var crystals = {}
+    var ricks = {}
     var wins = 0
     var losses = 0
 
@@ -15,55 +15,57 @@ $(document).ready(function() {
         }
         createGoalBox()
         console.log(randomNumber)
-        //each crystal assigned a random number between 1-15
-        function createCrystalNumbers() {
+        //each rick assigned a random number between 1-15
+        function createRickNumbers() {
             for (i = 0; i < 4; i++) {
-                crystals[i] = Math.floor(Math.random() * (15 - 2) + 1)
+                ricks[i] = Math.floor(Math.random() * (15 - 2) + 1)
             }
         }
-        createCrystalNumbers()
+        createRickNumbers()
         userTotal = 0
         $("#total").text(userTotal)
 
     }
-    // create crystals with assigned values
-    function crystalDisplays() {
-        $("#crystal-1").html('<img src="assets/images/shwiftyrick.jpg" height="150px" width="auto" alt="schwifty-rick">')
-        $("#crystal-2").html('<img src="assets/images/tiny-rick-2.jpg" height="150px" width="auto" alt="tiny-rick">')
-        $("#crystal-3").html('<img src="assets/images/handglide-rick.jpg" height="150px" width="auto" alt="handglide-rick">')
-        $("#crystal-4").html('<img src="assets/images/pickle-rick.jpg" height="150px" width="auto" alt="pickle-rick">')
+    // create ricks with assigned values
+    function rickDisplays() {
+        $("#rick-1").html('<img src="assets/images/shwiftyrick.jpg" height="150px" width="auto" alt="schwifty-rick">')
+        $("#rick-2").html('<img src="assets/images/tiny-rick-2.jpg" height="150px" width="auto" alt="tiny-rick">')
+        $("#rick-3").html('<img src="assets/images/handglide-rick.jpg" height="150px" width="auto" alt="handglide-rick">')
+        $("#rick-4").html('<img src="assets/images/pickle-rick.jpg" height="150px" width="auto" alt="pickle-rick">')
     }
 
     //Trying to refactor on click functions
-    // function createCrystal() {
+    // function createRick() {
     //     for (var i = 0; i < 4; i++) {
-    //         $("crystal-" + (i + 1))
+    //         $("rick-" + (i + 1))
     //             .on("click", function() {
-    //                 userTotal = userTotal + crystals[i]
+    //                 userTotal = userTotal + ricks[i]
     //                 checker()
     //                 console.log(userTotal)
     //             })
     //     }
     // }
-    // createCrystal()
+    // createrick()
 
-    $("#crystal-1").on("click", function() {
-        userTotal = userTotal + crystals[0]
+    //rick click handler updating total and checking for win or loss
+    $("#rick-1").on("click", function() {
+        userTotal = userTotal + ricks[0]
         checker()
     })
-    $("#crystal-2").on("click", function() {
-        userTotal = userTotal + crystals[1]
+    $("#rick-2").on("click", function() {
+        userTotal = userTotal + ricks[1]
         checker()
     })
-    $("#crystal-3").on("click", function() {
-        userTotal = userTotal + crystals[2]
+    $("#rick-3").on("click", function() {
+        userTotal = userTotal + ricks[2]
         checker()
     })
-    $("#crystal-4").on("click", function() {
-        userTotal = userTotal + crystals[3]
+    $("#rick-4").on("click", function() {
+        userTotal = userTotal + ricks[3]
         checker()
     })
 
+    //win or loss checker with huser total uupdate
     function checker() {
         $("#total").text(userTotal)
         if (userTotal === randomNumber) {
@@ -81,7 +83,7 @@ $(document).ready(function() {
             $("#myModal").modal("show")
         }
     }
-    crystalDisplays()
+    rickDisplays()
     startGame()
-    console.log(crystals)
+    console.log(ricks)
 });
